@@ -1,0 +1,38 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalsStyles = createGlobalStyle`
+  *, 
+  *::before, 
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  body, input, button {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p {
+    line-height: 1.4;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  input {
+    outline: none;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+`;
