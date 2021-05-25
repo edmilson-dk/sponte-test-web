@@ -24,6 +24,8 @@ export type ProductStoreType = {
   value: number;
   acquisition: Date;
   image: string;
+  createdAt: Date;
+  updatedAt: Date;
   id: string;
 }
 
