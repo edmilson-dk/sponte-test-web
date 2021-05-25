@@ -9,7 +9,8 @@ const theme = {
   danger: "#DB261F",
   warning: "#FFC10A",
   bgPrimary: "#fff",
-  bgSecond: "rgba(244, 244, 244, 0.8)"
+  bgSecond: "rgba(244, 244, 244, 0.8)",
+  radius: "5px",
 }
 
 type CustomThemeProviderProps = {
