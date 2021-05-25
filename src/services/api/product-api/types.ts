@@ -30,4 +30,6 @@ export type ProductStoreType = {
 export type ProductsStoreType = {
   data: ProductStoreType[],
   count: number;
+  deletedCount: number;
+  updatedCount: number;
 }
