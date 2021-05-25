@@ -1,9 +1,18 @@
 import { colorsSwitch } from "src/styles";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 type Props = {
   bgType: "deleted" | "created" | "updated";
 }
+
+const animate = keyframes`
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+`;
 
 export const DashboardBoxInfoWrapper = styled.div<Props>`
   max-width: 100%;
@@ -23,6 +32,7 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
     border-radius: 50%;
     border: 5px solid ${({ bgType }) => colorsSwitch[bgType]};
     overflow: hidden;
+    position: relative;
     
     > span {
       width: 100%;
@@ -37,6 +47,11 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
       font-weight: 700;
       color: ${({ theme }) => theme.colors.white};
 
+      position: absolute;
+      bottom: 0;
+
+      animation: ${animate} .6s ease-in-out;
+      animation-direction: initial;
       background-color: ${({ bgType }) => colorsSwitch[bgType]};
       opacity: 0.6;
     }
