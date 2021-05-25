@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { DashboardHome } from "../screens/dashboard-home";
+import { DashboarWrapper } from "src/components/dashboard-wrapper";
+import { DashboardHome } from "src/screens/dashboard-home";
 
 export function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/"component={DashboardHome}/>
+        <DashboarWrapper>
+          <Route exact path="/"component={DashboardHome}/>
+        </DashboarWrapper>
       </Switch>
     </BrowserRouter>
   )
