@@ -1,13 +1,32 @@
 import { v4 } from "uuid";
 
 import { constants } from "src/constants";
-import { ProductData } from "./types";
+import { ProductData, ProductsStoreType } from "./types";
 
 export class ProductApi {
-  static addProduct(data: ProductData) {
+  addProduct(data: ProductData) {
     const id = v4();
+    let allProducts: ProductsStoreType | null = this.getProducts();
 
-    window.localStorage.setItem(constants.storagedProductKey, JSON.stringify({ ...data, id }));
+    if (!allProducts) {
+      allProducts = {
+        data: [{ ...data, id  }],
+        count: 1,
+      }
+    } else {
+      allProducts.data.push({ ...data, id  });
+      allProducts.count = allProducts.data.length;
+    }
+
+    window.localStorage.setItem(constants.storagedProductKey, JSON.stringify(allProducts));
     return;
+  }
+
+  getProducts(): ProductsStoreType | null {
+    const allProducts = window.localStorage.getItem(constants.storagedProductKey);
+
+    if (!allProducts) return null;
+    
+    return JSON.parse(allProducts);
   }
 }
