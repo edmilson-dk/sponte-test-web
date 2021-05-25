@@ -12,6 +12,8 @@ export class ProductApi {
       allProducts = {
         data: [{ ...data, id  }],
         count: 1,
+        deletedCount: 0,
+        updatedCount: 0,
       }
     } else {
       allProducts.data.push({ ...data, id  });
