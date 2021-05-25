@@ -8,9 +8,19 @@ export const DashboardWrapperSideBarWrapper = styled.aside`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
 
   background-color: ${({ theme }) => theme.colors.white};
+
+  > div {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.whiteSecond};
+
+    > img {
+      width: 100px;
+    }
+  }
 
   > nav {
     align-self: flex-start;
