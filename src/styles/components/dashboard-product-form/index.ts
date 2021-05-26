@@ -12,6 +12,7 @@ export const DashboardProductFormWrapper = styled.form`
   align-items: flex-start;
   gap: 20px;
   position: relative;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.060);
 
   > button#form-submit-button {
     position: absolute;
