@@ -23,8 +23,8 @@ export class ProductApi {
 
   addProduct(data: ProductData) {
     const id = v4();
-    const updatedAt = new Date();
-    const createdAt = new Date();
+    const updatedAt: string = JSON.parse(JSON.stringify(new Date()));
+    const createdAt: string = JSON.parse(JSON.stringify(new Date()));
     const newProduct = { ...data, id, updatedAt, createdAt };
 
     let allProducts: ProductsStoreType | null = this.getProducts();
