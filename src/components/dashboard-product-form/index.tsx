@@ -1,12 +1,19 @@
 import { useFormik } from "formik";
+import { useState } from "react";
 
 import { constants } from "src/constants";
 import { ProductData } from "src/services/api/product-api/types";
 import { ProductInput } from "./input";
 import { DashboardProductFormWrapper } from "src/styles/components/dashboard-product-form";
 import { ProductValidateSchema, validate } from "src/services/product-validate";
+import { ProductMultipleInputValue } from "./multiple-input-values";
+import { formatCategories } from "src/utils/formatCategories";
+import { useProductsContext } from "src/contexts/products-context";
 
 export function DashboardProductForm() {
+  const [ category, setCategory ] = useState([{ key: "", value: "Sem catégorias" }]);
+  const { addProduct } = useProductsContext();
+
   const initialValues: ProductData = constants.initialProductValues;
 
   const formik = useFormik<ProductData>({
@@ -14,7 +21,8 @@ export function DashboardProductForm() {
     validate,
     validationSchema: ProductValidateSchema,
     onSubmit: values => {
-      console.log(JSON.stringify(values, null, 2));
+      const categories = formatCategories(category);
+      addProduct({...values, category: categories });
     },
   });
 
@@ -101,6 +109,14 @@ export function DashboardProductForm() {
           />
           {formik.touched.image && formik.errors.image ? <p>{formik.errors.image}</p> : null}
         </div>
+        <div>
+          <ProductMultipleInputValue 
+            state={category}
+            setState={setCategory}
+            name="category"
+            label="Catégorias"
+          />
+        </div>
       </section>
 
       <section>
@@ -144,7 +160,12 @@ export function DashboardProductForm() {
           {formik.touched.description && formik.errors.description ? <p>{formik.errors.description}</p> : null}
         </div>
       </section>
-      <button type="submit">Clock</button>
+      <button 
+        type="submit" 
+        id="form-submit-button"
+      >
+        Adicionar
+      </button>
     </DashboardProductFormWrapper>
   )
 }
