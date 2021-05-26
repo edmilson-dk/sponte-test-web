@@ -31,25 +31,25 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 5px solid ${({ bgType }) => colorsSwitch[bgType]};
+    background-color: ${({ bgType }) => colorsSwitch[bgType]};
+    z-index: 1;
     overflow: hidden;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     > span {
-      width: 100%;
-      height: 100%;
-
+      width: 77px;
+      height: 77px;
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 9;
 
       font-size: 2.5rem;
       text-align: center;
       font-weight: 700;
       color: ${({ theme }) => theme.colors.white};
-
-      position: absolute;
-      bottom: 0;
 
       animation: ${animate} .6s ease-in-out;
       animation-direction: initial;
