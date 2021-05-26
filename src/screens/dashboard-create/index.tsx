@@ -8,7 +8,7 @@ export function DashboardCreate() {
     <DashboardCreateWrapper>
       <Container>
         <TitlePrimary>Adicionar novo produto</TitlePrimary>
-        <DashboardProductForm />
+        <DashboardProductForm isUpdate={false}/>
       </Container>
     </DashboardCreateWrapper>
   )
