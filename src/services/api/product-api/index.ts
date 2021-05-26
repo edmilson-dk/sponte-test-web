@@ -23,8 +23,8 @@ export class ProductApi {
 
   addProduct(data: ProductData) {
     const id = v4();
-    const updatedAt: string = JSON.parse(JSON.stringify(new Date()));
-    const createdAt: string = JSON.parse(JSON.stringify(new Date()));
+    const updatedAt: string = new Date().toISOString();
+    const createdAt: string = new Date().toISOString();
     const newProduct = { ...data, id, updatedAt, createdAt };
 
     let allProducts: ProductsStoreType | null = this.getProducts();
@@ -37,12 +37,12 @@ export class ProductApi {
     !allProductsEvents 
       ? this.addProductEvent({ 
         count: 1, deletedCount: 0, updatedCount: 0,   
-        updatedDateCount: new Date(),
-        updatedDateDeletedCount: new Date(),
-        updatedDateUpdatedCount: new Date(), })
+        updatedDateCount: new Date().toISOString(),
+        updatedDateDeletedCount: new Date().toISOString(),
+        updatedDateUpdatedCount: new Date().toISOString() })
       : this.updateProductEventCount({ 
         count: allProducts.data.length-1,
-        updatedDateCount: new Date(),
+        updatedDateCount: new Date().toISOString(),
       }, allProductsEvents);
     
     window.localStorage.setItem(constants.storagedProductKey, JSON.stringify(allProducts));
@@ -75,9 +75,9 @@ export class ProductApi {
     
     this.updateProductEventCount({ 
       deletedCount: allProductsEvents.deletedCount +1,
-      updatedDateDeletedCount: new Date(),
+      updatedDateDeletedCount: new Date().toISOString(),
       count: allProducts.data.length-1,
-      updatedDateCount: new Date(),
+      updatedDateCount: new Date().toISOString(),
      }, allProductsEvents);
 
     window.localStorage.setItem(constants.storagedProductKey, JSON.stringify({ data: newProducts }));

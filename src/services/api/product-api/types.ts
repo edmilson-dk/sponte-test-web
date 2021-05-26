@@ -8,7 +8,7 @@ export type ProductData = {
   barCode: string;
   category: string[];
   value: number;
-  acquisition: Date;
+  acquisition: string;
   image: string;
 }
 
@@ -22,7 +22,7 @@ export type ProductStoreType = {
   barCode: string;
   category: string[];
   value: number;
-  acquisition: Date;
+  acquisition: string;
   image: string;
   createdAt: string;
   updatedAt: string;
@@ -46,11 +46,11 @@ export type ProductEventsStoreType = {
 
 export type ProductEventsStoreData = {
   count: number;
-  updatedDateCount: Date;
+  updatedDateCount: string;
   deletedCount: number;
-  updatedDateDeletedCount: Date;
+  updatedDateDeletedCount: string;
   updatedCount: number;
-  updatedDateUpdatedCount: Date;
+  updatedDateUpdatedCount: string;
 }
 
 export type ProductsStoreType = {
