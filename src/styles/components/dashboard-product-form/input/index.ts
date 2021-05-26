@@ -8,7 +8,7 @@ export const ProductInputWrapper = styled.div`
   align-items: flex-start;
 
   > label {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.gray800};
     text-align: left;
@@ -22,7 +22,7 @@ export const ProductInputWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.whiteSecond};
     border: 1px solid ${({ theme }) => theme.colors.gray100};
     color: ${({ theme }) => theme.colors.gray500};
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.060);
 
