@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { ProductData, ProductStoreType } from "src/services/api/product-api/types";
+import { ProductData, ProductsStoreType, ProductStoreType } from "src/services/api/product-api/types";
 
 export type DeletedCountType = {
   deletedCount: number;
@@ -20,6 +20,7 @@ export type UpdatedCountType = {
 export interface ProductsContextProps {
   deleteProduct: (id: string) => void;
   addProduct: (data: ProductData) => void;
+  getAllProducts: () => ProductsStoreType | null;
   deletedCount: DeletedCountType;
   createdCount: CreatedCountType;
   updatedCount: UpdatedCountType;
