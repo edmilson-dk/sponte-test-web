@@ -51,7 +51,7 @@ export function DashboardHome() {
             }
             bgType="updated"/>
         </DashboardHomeHeader>
-
+        
         <DashboardHomeContent>
           <TitlePrimary>Produtos mais recentes</TitlePrimary>
 
