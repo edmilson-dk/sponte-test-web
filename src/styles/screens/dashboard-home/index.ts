@@ -11,6 +11,17 @@ export const DashboardHomeHeader = styled.header`
   padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 30px;
+  grid-gap: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.040);
+`;
+
+export const DashboardHomeContent = styled.section`
+  width: 100%;
+  padding: 30px 0;
+
+  > section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
 `;
