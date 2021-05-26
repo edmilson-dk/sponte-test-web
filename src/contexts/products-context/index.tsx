@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 import { ProductApi } from "src/services/api/product-api";
-import { ProductData, ProductsStoreType } from "src/services/api/product-api/types";
+import { ProductData, ProductsStoreType, ProductStoreType } from "src/services/api/product-api/types";
 import { CreatedCountType, DeletedCountType, ProductsContextProps, ProductsContextProviderProps, UpdatedCountType } from "./types";
 
 const ProductsContext = createContext({} as ProductsContextProps);
@@ -32,6 +32,11 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
     return products;
   }
 
+  function getOneProduct(id: string): ProductStoreType | null {
+    const product = productApi.getOneProduct(id);
+    return product;
+  }
+
   useEffect(() => {
     const eventsData = productApi.getProductsEvents();
     if (!eventsData) return;
@@ -57,9 +62,10 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
       deleteProduct, 
       addProduct, 
       getAllProducts,
+      getOneProduct,
       createdCount, 
       deletedCount, 
-      updatedCount
+      updatedCount,
     }}>
       { children }
     </ProductsContext.Provider>
