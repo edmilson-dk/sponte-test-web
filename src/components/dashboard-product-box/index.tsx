@@ -1,5 +1,6 @@
 import { FiEye, FiSettings, FiTrash2 } from "react-icons/fi";
 import { DashboardProductBoxWrapper } from "src/styles/components/dashboard-product-box";
+import { formatValueToMoney } from "src/utils/formatValueToMoney";
 
 import { DashboardProductBoxProps } from "./types";
 
@@ -16,7 +17,7 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
         </p>
         <p>
           <strong>Valor:</strong>
-          <span>{value}</span>
+          <span>{formatValueToMoney(String(value))}</span>
         </p>
         <p id="product-category">
           <strong>Catégorias:</strong>
