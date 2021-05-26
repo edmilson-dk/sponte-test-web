@@ -4,7 +4,8 @@ export const constants = {
   initialProductValues: {
     title: "", 
     description: "", 
-    height: 0, width: 0, length: 0, weight: 0, 
+    height: 0, width: 0, 
+    length: 0, weight: 0, 
     barCode: "",
     category: [], 
     value: 0, 
