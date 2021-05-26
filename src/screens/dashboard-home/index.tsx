@@ -57,21 +57,17 @@ export function DashboardHome() {
 
           <section>
             {
-              products && products.data.map((item, index) => {
-                if (index < 9) {
-                  return (
-                    <DashboardProductBox 
-                      key={item.id}
-                      title={item.title}
-                      value={item.value}
-                      category={item.category}
-                      id={item.id}
-                      image={item.image || defaultProductImagePng}
-                      createdAt={item.createdAt}
-                    />
-                  )
-                }
-              })
+              products && products.data.slice(0, 9).map((item, index) => (
+                <DashboardProductBox 
+                  key={item.id}
+                  title={item.title}
+                  value={item.value}
+                  category={item.category}
+                  id={item.id}
+                  image={item.image || defaultProductImagePng}
+                  createdAt={item.createdAt}
+                />
+              ))
             }
           </section>
         </DashboardHomeContent>
