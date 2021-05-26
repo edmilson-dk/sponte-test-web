@@ -8,3 +8,8 @@ export function formatDate(date: string) {
 export function formatDateToCalendar(date: string) {
   return format(parseISO(date), 'd MM yy', { locale: ptBR });
 }
+
+export function formatDateToBrowser(date: string) {
+  const newDate = format(parseISO(date), 'yyyy MM dd', { locale: ptBR });
+  return newDate.split(" ").join("-");
+}
