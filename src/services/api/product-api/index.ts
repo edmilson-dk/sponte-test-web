@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 
 import { constants } from "src/constants";
-import { ProductData, ProductEventsStoreData, ProductEventsStoreType, ProductsStoreType } from "./types";
+import { ProductData, ProductEventsStoreData, ProductEventsStoreType, ProductsStoreType, ProductStoreType } from "./types";
 
 export class ProductApi {
 
@@ -63,6 +63,16 @@ export class ProductApi {
     if (!allProducts) return null;
     
     return JSON.parse(allProducts);
+  }
+
+  getOneProduct(id: string): ProductStoreType | null {
+    const allProducts = window.localStorage.getItem(constants.storagedProductKey);
+    if (!allProducts) return null;
+
+    const products: ProductsStoreType = JSON.parse(allProducts);
+    const product = products.data.find(item => item.id === id);
+      
+    return product ? product : null;
   }
 
   deleteProduct(id: string) {
