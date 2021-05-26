@@ -29,7 +29,7 @@ export function DashboardHome() {
             updatedAt={ 
               createdCount.count !== undefined 
                 ? formatDate(createdCount.updatedDateCount) 
-                : "Loading"
+                : "Não disponível"
             } 
             bgType="created"/>
           <DashboardBoxInfo 
@@ -38,7 +38,7 @@ export function DashboardHome() {
             updatedAt={ 
               deletedCount.deletedCount !== undefined 
                 ? formatDate(deletedCount.updatedDateDaletedCount) 
-                : "Loading"
+                : "Não disponível"
             }
             bgType="deleted"/>
           <DashboardBoxInfo 
@@ -47,7 +47,7 @@ export function DashboardHome() {
             updatedAt={ 
               updatedCount.updatedCount !== undefined 
                 ? formatDate(updatedCount.updatedDateUpdatedCount) 
-                : "Loading"
+                : "Não disponível"
             }
             bgType="updated"/>
         </DashboardHomeHeader>
@@ -57,7 +57,7 @@ export function DashboardHome() {
 
           <section>
             {
-              products && products.data.slice(0, 9).map((item, index) => (
+              products && products.data.slice(0, 9).reverse().map((item, index) => (
                 <DashboardProductBox 
                   key={item.id}
                   title={item.title}
