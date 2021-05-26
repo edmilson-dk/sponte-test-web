@@ -1,12 +1,25 @@
+import { useRef } from "react";
 import { FiEye, FiSettings, FiTrash2 } from "react-icons/fi";
+import { useProductsContext } from "src/contexts/products-context";
 import { DashboardProductBoxWrapper } from "src/styles/components/dashboard-product-box";
 import { formatValueToMoney } from "src/utils/formatValueToMoney";
 
 import { DashboardProductBoxProps } from "./types";
 
 export function DashboardProductBox({ title, category, image, value, id }: DashboardProductBoxProps) {
+  const { deleteProduct } = useProductsContext();
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  function hadlerDelete() {
+    deleteProduct(id);
+
+    if (!boxRef.current) return;
+
+    boxRef.current.style.display = "none";
+  }
+
   return (
-    <DashboardProductBoxWrapper>
+    <DashboardProductBoxWrapper ref={boxRef}>
       <div>
         <img src={image} alt="Produto infos" />
       </div>
@@ -37,7 +50,7 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
             <FiSettings size="100%"/>
           </span>
         </button>
-        <button id="delete-product">
+        <button type="button" id="delete-product" onClick={hadlerDelete}>
           <span>
             <FiTrash2 size="100%"/>
           </span>

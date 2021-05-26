@@ -41,7 +41,7 @@ export class ProductApi {
         updatedDateDeletedCount: new Date(),
         updatedDateUpdatedCount: new Date(), })
       : this.updateProductEventCount({ 
-        count: allProducts.data.length,
+        count: allProducts.data.length-1,
         updatedDateCount: new Date(),
       }, allProductsEvents);
     
@@ -71,12 +71,13 @@ export class ProductApi {
 
     if (!allProductsEvents || !allProducts) return;
 
-    console.log(allProducts)
     const newProducts = allProducts.data.filter(product => product.id !== id);
     
     this.updateProductEventCount({ 
       deletedCount: allProductsEvents.deletedCount +1,
       updatedDateDeletedCount: new Date(),
+      count: allProducts.data.length-1,
+      updatedDateCount: new Date(),
      }, allProductsEvents);
 
     window.localStorage.setItem(constants.storagedProductKey, JSON.stringify({ data: newProducts }));

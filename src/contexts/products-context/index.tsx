@@ -49,6 +49,7 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
     setDeletedCount({ 
       deletedCount: eventsData.deletedCount, 
       updatedDateDaletedCount: eventsData.updatedDateDeletedCount });
+    setCreatedCount({ count: eventsData.count, updatedDateCount: eventsData.updatedDateCount });
   }, [onDeleteState]);
 
   return (

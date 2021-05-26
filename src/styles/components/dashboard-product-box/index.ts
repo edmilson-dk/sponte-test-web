@@ -30,6 +30,21 @@ export const DashboardProductBoxWrapper = styled.div`
     align-items: flex-start;
   }
 
+  > article p#product-category {
+    display: flex;
+    flex-wrap: wrap;
+
+    > span {
+      padding: 5px;
+      border-radius: ${({ theme }) => theme.utility.radius};
+      background-color: ${({ theme }) => theme.colors.gray200};
+      font-size: 14px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.white};
+
+    }
+  }
+
   > article p {
     > strong {
       font-size: 18px;
@@ -45,6 +60,10 @@ export const DashboardProductBoxWrapper = styled.div`
       text-align: left;
       color: ${({ theme }) => theme.colors.gray500};
     }
+  }
+
+  article p + p {
+    margin-top: 10px;
   }
 
   > footer {

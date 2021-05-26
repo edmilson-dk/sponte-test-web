@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import defaultProductImagePng from "src/assets/default-product-image.png";
 
@@ -15,6 +15,10 @@ export function DashboardHome() {
  
   const [ products, setProducts ] = useState(getAllProducts());
 
+  useEffect(() => {
+    setProducts(getAllProducts());
+  }, [ deletedCount, createdCount ])
+
   return (
     <DashboardHomeWrapper>
       <Container>
@@ -22,17 +26,29 @@ export function DashboardHome() {
           <DashboardBoxInfo 
             title="Total" 
             value={createdCount.count ?? 0} 
-            updatedAt={ createdCount.count !== undefined ? formatDate(createdCount.updatedDateCount) : "Loading"} 
+            updatedAt={ 
+              createdCount.count !== undefined 
+                ? formatDate(createdCount.updatedDateCount) 
+                : "Loading"
+            } 
             bgType="created"/>
           <DashboardBoxInfo 
             title="Deletados" 
             value={deletedCount.deletedCount ?? 0} 
-            updatedAt={ deletedCount.deletedCount !== undefined ? formatDate(deletedCount.updatedDateDaletedCount) : "Loading"}
+            updatedAt={ 
+              deletedCount.deletedCount !== undefined 
+                ? formatDate(deletedCount.updatedDateDaletedCount) 
+                : "Loading"
+            }
             bgType="deleted"/>
           <DashboardBoxInfo 
             title="Atualizados" 
             value={updatedCount.updatedCount ?? 0} 
-            updatedAt={ updatedCount.updatedCount !== undefined ? formatDate(updatedCount.updatedDateUpdatedCount) : "Loading"}
+            updatedAt={ 
+              updatedCount.updatedCount !== undefined 
+                ? formatDate(updatedCount.updatedDateUpdatedCount) 
+                : "Loading"
+            }
             bgType="updated"/>
         </DashboardHomeHeader>
 
@@ -41,16 +57,21 @@ export function DashboardHome() {
 
           <section>
             {
-              products && products.data.slice(0, 9).map(item => (
-                <DashboardProductBox 
-                  title={item.title}
-                  value={item.value}
-                  category={item.category}
-                  id={item.id}
-                  image={item.image || defaultProductImagePng}
-                  createdAt={item.createdAt}
-                />
-              ))
+              products && products.data.map((item, index) => {
+                if (index < 9) {
+                  return (
+                    <DashboardProductBox 
+                      key={item.id}
+                      title={item.title}
+                      value={item.value}
+                      category={item.category}
+                      id={item.id}
+                      image={item.image || defaultProductImagePng}
+                      createdAt={item.createdAt}
+                    />
+                  )
+                }
+              })
             }
           </section>
         </DashboardHomeContent>
