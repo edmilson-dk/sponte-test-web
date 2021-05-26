@@ -25,7 +25,7 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
       </div>
       <article>
         <p>
-          <strong>Titúlo:</strong>
+          <strong>Nome:</strong>
           <span>{title}</span>
         </p>
         <p>
