@@ -9,7 +9,7 @@ export const constants = {
     barCode: "",
     category: [], 
     value: 0, 
-    acquisition: "", 
+    acquisition: new Date().toISOString(), 
     image: "",
   }
 }
