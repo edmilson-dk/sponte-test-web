@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { FiEye, FiSettings, FiTrash2 } from "react-icons/fi";
 import { useHistory } from "react-router";
+
 import { useProductsContext } from "src/contexts/products-context";
 import { DashboardProductBoxWrapper } from "src/styles/components/dashboard-product-box";
 import { formatValueToMoney } from "src/utils/formatValueToMoney";
@@ -21,9 +22,7 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
   }
 
   function handlerUpdate() {
-    history.push("/update", {
-      id,
-    });
+    history.push("/update", { id });
   }
 
   return (
