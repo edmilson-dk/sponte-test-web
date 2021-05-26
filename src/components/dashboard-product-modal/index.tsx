@@ -1,6 +1,6 @@
 import { FiCheckCircle, FiX, FiXCircle } from "react-icons/fi";
+import { DashboardProductModalContent, DashboardProductModalWrapper } from "src/styles/components/dashboard-product-modal";
 
-import { DashboardProductModalContent, DashboardProductModalWrapper } from "src/styles/components/dashboard- product-modal";
 import { DashboardProductModalProps } from "./types";
 
 export function DashboardProductModal({ title, message, isSuccess, setIsOpen }: DashboardProductModalProps) {
