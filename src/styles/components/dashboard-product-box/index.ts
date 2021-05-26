@@ -20,6 +20,7 @@ export const DashboardProductBoxWrapper = styled.div`
     width: 100%;
     max-height: 180px;
     object-fit: cover;
+    border-radius: ${({ theme }) => theme.utility.radius};
   }
 
   > article {
@@ -33,6 +34,7 @@ export const DashboardProductBoxWrapper = styled.div`
   > article p#product-category {
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
 
     > span {
       padding: 5px;
@@ -41,7 +43,6 @@ export const DashboardProductBoxWrapper = styled.div`
       font-size: 14px;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.white};
-
     }
   }
 
