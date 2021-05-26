@@ -1,3 +1,5 @@
+import { formatDateToBrowser } from "src/utils/formatDate";
+
 export const constants = {
   storagedProductKey: "@stored-product-key",
   storagedProducEventsKey: "@stored-product-events-key",
@@ -9,7 +11,7 @@ export const constants = {
     barCode: "",
     category: [], 
     value: 0, 
-    acquisition: new Date().toISOString(), 
+    acquisition: formatDateToBrowser(new Date().toISOString()), 
     image: "",
   }
 }
