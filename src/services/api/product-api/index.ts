@@ -41,7 +41,7 @@ export class ProductApi {
         updatedDateDeletedCount: new Date().toISOString(),
         updatedDateUpdatedCount: new Date().toISOString() })
       : this.updateProductEventCount({ 
-        count: allProducts.data.length-1,
+        count: allProducts.data.length,
         updatedDateCount: new Date().toISOString(),
       }, allProductsEvents);
     
