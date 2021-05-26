@@ -40,9 +40,7 @@ export function ProductMultipleInputValue({ state, setState, name, label }: Prod
       </div>
       <ul>
         {
-          state.length > 1 && state.map((item, index) => {
-            if (index === 0) return null;
-            
+          state.length > 0 && state.map(item => {
             return (  
               <li key={item.key}>
                 <span>{item.value}</span>
