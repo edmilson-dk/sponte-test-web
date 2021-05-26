@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { FiEye, FiSettings, FiTrash2 } from "react-icons/fi";
+import { useHistory } from "react-router";
 import { useProductsContext } from "src/contexts/products-context";
 import { DashboardProductBoxWrapper } from "src/styles/components/dashboard-product-box";
 import { formatValueToMoney } from "src/utils/formatValueToMoney";
@@ -8,6 +9,7 @@ import { DashboardProductBoxProps } from "./types";
 
 export function DashboardProductBox({ title, category, image, value, id }: DashboardProductBoxProps) {
   const { deleteProduct } = useProductsContext();
+  const history = useHistory();
   const boxRef = useRef<HTMLDivElement>(null);
 
   function hadlerDelete() {
@@ -16,6 +18,12 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
     if (!boxRef.current) return;
 
     boxRef.current.style.display = "none";
+  }
+
+  function handlerUpdate() {
+    history.push("/update", {
+      id,
+    });
   }
 
   return (
@@ -45,7 +53,7 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
             <FiEye size="100%"/>
           </span>
         </button>
-        <button id="update-product">
+        <button id="update-product" onClick={handlerUpdate}>
           <span>
             <FiSettings size="100%"/>
           </span>

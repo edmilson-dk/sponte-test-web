@@ -10,13 +10,16 @@ import { ProductMultipleInputValue } from "./multiple-input-values";
 import { formatCategories } from "src/utils/formatCategories";
 import { useProductsContext } from "src/contexts/products-context";
 import { DashboardProductModal } from "../dashboard-product-modal";
+import { DashboardProductFormProps } from "./types";
+import { CategoriesType } from "src/utils/types";
 
-export function DashboardProductForm() {
-  const [ category, setCategory ] = useState([{ key: "", value: "Sem catégorias" }]);
+export function DashboardProductForm({ data, categories, isUpdate }: DashboardProductFormProps) {
+  const [ category, setCategory ] = useState(categories || [] as CategoriesType[]);
+
   const [ isOpenModal, setIsOpenModal ] = useState(false);
   const { addProduct } = useProductsContext();
 
-  const initialValues: ProductData = constants.initialProductValues;
+  const initialValues: ProductData = data || constants.initialProductValues;
 
   const formik = useFormik<ProductData>({
     initialValues: initialValues,
@@ -178,7 +181,7 @@ export function DashboardProductForm() {
           type="submit" 
           id="form-submit-button"
         >
-          Adicionar
+          { isUpdate ? "Atualizar" : "Adicionar" }
         </button>
       </DashboardProductFormWrapper>
     </Fragment>
