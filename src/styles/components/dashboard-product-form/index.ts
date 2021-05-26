@@ -11,6 +11,19 @@ export const DashboardProductFormWrapper = styled.form`
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  position: relative;
+
+  > button#form-submit-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 10px 1rem;
+    border-radius: ${({ theme }) => theme.utility.radius};
+    background-color: ${({ theme }) => theme.colors.greenLight};
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
 
   > section {
     width: 100%;
