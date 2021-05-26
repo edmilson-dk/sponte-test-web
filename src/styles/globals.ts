@@ -27,7 +27,7 @@ export const GlobalsStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-  input {
+  input, textarea {
     outline: none;
     border: none;
   }
