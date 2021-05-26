@@ -1,5 +1,6 @@
-import { colorsSwitch } from "src/styles";
 import styled, { keyframes } from "styled-components";
+
+import { colorsSwitch } from "src/styles";
 
 type Props = {
   bgType: "deleted" | "created" | "updated";
@@ -42,7 +43,7 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
       justify-content: center;
       align-items: center;
 
-      font-size: 40px;
+      font-size: 2.5rem;
       text-align: center;
       font-weight: 700;
       color: ${({ theme }) => theme.colors.white};
@@ -61,7 +62,7 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
     margin-left: 20px;
 
     > h3 {
-      font-size: 22px;
+      font-size: 1.375rem;
       font-weight: 600;
       text-align: left;
       color: ${({ theme }) => theme.colors.gray500};
