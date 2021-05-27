@@ -23,6 +23,11 @@ export const NavigatorButtonWrapper = styled.button<NavigatorButtonWrapperProps>
 
   margin-top: 30px;
 
+
+  @media screen and (max-width: 1020px) {
+    margin-top: 0;
+  }
+
   > strong {
     font-size: 1.125rem;
     font-weight: 500;

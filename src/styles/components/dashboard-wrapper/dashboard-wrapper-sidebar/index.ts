@@ -20,10 +20,35 @@ export const DashboardWrapperSideBarWrapper = styled.aside`
     > img {
       width: 100px;
     }
+
+    @media screen and (max-width: 1020px) {
+      > img {
+        width: 80px;
+      }
+    }
   }
 
   > nav {
     align-self: flex-start;
     width: 100%;
+
+    @media screen and (max-width: 1020px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+    }
+
+    @media screen and (max-width: 705px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+
+      > * {
+        width: 100%;
+        max-width: 390px;
+      }
+    }
   }
 `;

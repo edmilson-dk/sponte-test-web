@@ -44,4 +44,10 @@ export const DashboardProductFormWrapper = styled.form`
     //margin-top: 10px;
     color: ${({ theme }) => theme.colors.danger};
   }
+
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 620px;
+  }
 `;

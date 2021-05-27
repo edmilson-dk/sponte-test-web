@@ -17,6 +17,7 @@ const animate = keyframes`
 
 export const DashboardBoxInfoWrapper = styled.div<Props>`
   max-width: 100%;
+  min-width: 180px;
   padding: 20px;
   border-radius: ${({ theme }) => theme.utility.radius};
   background-color: ${({ theme }) => theme.colors.white};
@@ -27,9 +28,19 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
   align-items: center;
   flex-wrap: wrap;
 
+  @media screen and (max-width: 1260px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      margin-bottom: 10px;
+    }
+  }
+
   > div {
-    width: 80px;
-    height: 80px;
+    width: auto;
+    height: auto;
     border-radius: 50%;
     background-color: ${({ bgType }) => colorsSwitch[bgType]};
     z-index: 1;
@@ -37,6 +48,8 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: ${animate} .6s ease-in-out;
+    animation-direction: initial;
     
     > span {
       width: 77px;
@@ -50,11 +63,19 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
       text-align: center;
       font-weight: 700;
       color: ${({ theme }) => theme.colors.white};
-
-      animation: ${animate} .6s ease-in-out;
-      animation-direction: initial;
       background-color: ${({ bgType }) => colorsSwitch[bgType]};
       opacity: 0.6;
+    }
+
+    @media screen and (max-width: 760px) { 
+      width: 70px;
+      height: 70px;
+
+      > span {
+        width: 67px;
+        height: 67px;
+        font-size: 2.1875rem;
+      }
     }
   }
 
@@ -66,7 +87,7 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
       font-weight: 600;
       text-align: left;
       color: ${({ theme }) => theme.colors.gray500};
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     > span {
@@ -74,6 +95,12 @@ export const DashboardBoxInfoWrapper = styled.div<Props>`
       font-weight: 500;
       text-align: left;
       color: ${({ theme }) => theme.colors.gray200};
+    }
+
+    @media screen and (max-width: 760px) {
+      > h3 {
+        font-size: 1.125rem;
+      }
     }
   }
 `;

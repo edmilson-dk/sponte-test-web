@@ -5,6 +5,10 @@ export const DashboarWrapperContainer = styled.main`
   height: 100%;
   display: flex;
   padding: 0;
+
+  @media screen and (max-width: 1020px) {
+    flex-direction: column;
+  }
 `;
 
 export const DashboarWrapperNavigator = styled.aside`
@@ -12,6 +16,11 @@ export const DashboarWrapperNavigator = styled.aside`
   max-width: 280px;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media screen and (max-width: 1020px) {
+    min-height: auto;
+    max-width: 100%;
+  }
 `;
 
 export const DashboarWrapperContent = styled.article`
@@ -19,4 +28,8 @@ export const DashboarWrapperContent = styled.article`
   height: 100vh;
   overflow-y: auto;
   background-color: ${({ theme }) => theme.colors.whiteSecond};
+
+  @media screen and (max-width: 1020px) {
+    width: 100%;
+  }
 `;

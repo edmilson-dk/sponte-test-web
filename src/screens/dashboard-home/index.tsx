@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { FiArrowRight } from "react-icons/fi";
 
 import { DashboardBoxInfo } from "src/components/dashboard-box-info";
+import { DashboardProductIsEmpty } from "src/components/dashboard-product-is-empty";
 import { useProductsContext } from "src/contexts/products-context";
 import { Container } from "src/styles/components/container";
 import { TitlePrimary } from "src/styles/components/titles";
@@ -50,17 +52,32 @@ export function DashboardHome() {
             bgType="updated" />
         </DashboardHomeHeader>
 
-        <DashboardHomeContent>
-          <TitlePrimary>Produtos mais recentes</TitlePrimary>
+        <span id="arrow">
+          <FiArrowRight size="100%" />
+        </span>
 
-          <section>
+        <DashboardHomeContent>
+          <TitlePrimary>
             {
-              products && products.data
-                .slice(products.data.length-9, products.data.length)
-                .reverse()
-                .map(item => returnBoxs(item))
+              (products && products.data.length > 0) 
+                ? "Produtos mais recentes" 
+                : "Nenhum produto cadastrado"
             }
-          </section>
+          </TitlePrimary>
+
+          { 
+            (products && products.data.length > 0) 
+              ? (
+              <section>
+                {
+                  products && products.data
+                    .slice(products.data.length - 9, products.data.length)
+                    .reverse()
+                    .map(item => returnBoxs(item))
+                }
+              </section>
+            ) : ( <DashboardProductIsEmpty /> )
+          }
         </DashboardHomeContent>
       </Container>
     </DashboardHomeWrapper>

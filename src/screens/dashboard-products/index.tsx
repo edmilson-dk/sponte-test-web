@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { DashboardProductIsEmpty } from "src/components/dashboard-product-is-empty";
 import { DashboardProductPaginate } from "src/components/dashboard-product-paginate";
 import { useProductsContext } from "src/contexts/products-context";
 import { ProductsStoreType } from "src/services/api/product-api/types";
@@ -50,21 +51,34 @@ export function DashboardProducts() {
     <DashboardProductsWrapper>
       <Container>
         <DashboardProductsContent>
-          <TitlePrimary>Todos os produtos</TitlePrimary>
-
-          <section>
+          <TitlePrimary>
             {
-              (products && page.actual === 1)
-                ? products.data.slice(page.start, page.end).map(item => returnBoxs(item))
-                : products && products.data.map(item => returnBoxs(item))
+              (products && products.data.length > 0)
+                ? "Todos os produtos"
+                : "Nenhum produto cadastrado"
             }
-          </section>
-          <DashboardProductPaginate
-            nextCbFetch={handlerNextDataClick}
-            prevCbFetch={handlerPrevDataClick}
-            prevDisabled={page.actual === 1}
-            nextDisabled={page.actual === Math.ceil(count / 12)}
-          />
+          </TitlePrimary>
+
+          {(products && products.data.length > 0)
+            ? (
+              <section>
+                {
+                  (products && page.actual === 1)
+                    ? products.data.slice(page.start, page.end).map(item => returnBoxs(item))
+                    : products && products.data.map(item => returnBoxs(item))
+                }
+              </section>
+            ) : (<DashboardProductIsEmpty />)
+          }
+
+          {(products && products.data.length > 0) && (
+            <DashboardProductPaginate
+              nextCbFetch={handlerNextDataClick}
+              prevCbFetch={handlerPrevDataClick}
+              prevDisabled={page.actual === 1}
+              nextDisabled={page.actual === Math.ceil(count / 12)}
+            />
+          )}
         </DashboardProductsContent>
       </Container>
     </DashboardProductsWrapper>
