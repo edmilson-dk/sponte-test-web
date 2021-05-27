@@ -55,7 +55,7 @@ vaga de desenvolvedor front-end na [Sponte]()
 
 ### Atualização de produto 
 
-![Atualização de produtos](ttps://tlgur.com/d/g503ve2G)
+![Atualização de produtos](https://tlgur.com/d/g503ve2G)
 
 ### Visualização de produto
 
