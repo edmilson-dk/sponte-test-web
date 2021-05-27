@@ -56,7 +56,7 @@ export function DashboardHome() {
           <section>
             {
               products && products.data
-                .slice(0, 9)
+                .slice(products.data.length-9, products.data.length)
                 .reverse()
                 .map(item => returnBoxs(item))
             }

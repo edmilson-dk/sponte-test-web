@@ -21,8 +21,8 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
     boxRef.current.style.display = "none";
   }
 
-  function handlerUpdate() {
-    history.push("/update", { id });
+  function handlerChangeRouter(router: string) {
+    history.push(router, { id });
   }
 
   return (
@@ -47,12 +47,12 @@ export function DashboardProductBox({ title, category, image, value, id }: Dashb
         </p>
       </article>
       <footer>
-        <button id="view-product">
+        <button id="view-product" onClick={() => handlerChangeRouter("/view")}>
           <span>
             <FiEye size="100%"/>
           </span>
         </button>
-        <button id="update-product" onClick={handlerUpdate}>
+        <button id="update-product" onClick={() => handlerChangeRouter("/update")}>
           <span>
             <FiSettings size="100%"/>
           </span>

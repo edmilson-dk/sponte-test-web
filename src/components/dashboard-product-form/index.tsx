@@ -14,9 +14,9 @@ import { DashboardProductFormProps } from "./types";
 import { CategoriesType } from "src/utils/types";
 
 export function DashboardProductForm({ data, categories, isUpdate }: DashboardProductFormProps) {
-  const [ category, setCategory ] = useState(categories || [] as CategoriesType[]);
+  const [category, setCategory] = useState(categories || [] as CategoriesType[]);
 
-  const [ isOpenModal, setIsOpenModal ] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const { addProduct, updateProduct } = useProductsContext();
 
   const initialValues: ProductData = data || constants.initialProductValues;
@@ -27,23 +27,24 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
     validationSchema: ProductValidateSchema,
     onSubmit: values => {
       const categories = formatCategories(category);
-      isUpdate 
-        ? updateProduct({ ...values, 
-            createdAt: data?.createdAt ?? "", 
-            updatedAt: data?.updatedAt ?? "", 
-            category: categories,
-            id: data?.id ?? "" 
-          })
-        : addProduct({...values, category: categories });
+      isUpdate
+        ? updateProduct({
+          ...values,
+          createdAt: data?.createdAt ?? "",
+          updatedAt: data?.updatedAt ?? "",
+          category: categories,
+          id: data?.id ?? ""
+        })
+        : addProduct({ ...values, category: categories });
       setIsOpenModal(true);
     },
   });
 
   return (
     <Fragment>
-       {
-        isOpenModal &&  (
-          <DashboardProductModal 
+      {
+        isOpenModal && (
+          <DashboardProductModal
             title="Novo produto adicionado."
             message="Todos os dados já estão disponíveis para visualização."
             isSuccess={true}
@@ -84,7 +85,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
               <ProductInput
                 id="height"
                 name="height"
-                label="Altura"
+                label="Altura/cm"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.height}
@@ -97,7 +98,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
               <ProductInput
                 id="width"
                 name="width"
-                label="Largura"
+                label="Largura/cm"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.width}
@@ -110,7 +111,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
               <ProductInput
                 id="length"
                 name="length"
-                label="Comprimento"
+                label="Comprimento/cm"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.length}
@@ -134,7 +135,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
             {formik.touched.image && formik.errors.image ? <p>{formik.errors.image}</p> : null}
           </div>
           <div>
-            <ProductMultipleInputValue 
+            <ProductMultipleInputValue
               state={category}
               setState={setCategory}
               name="category"
@@ -184,11 +185,11 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
             {formik.touched.description && formik.errors.description ? <p>{formik.errors.description}</p> : null}
           </div>
         </section>
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           id="form-submit-button"
         >
-          { isUpdate ? "Atualizar" : "Adicionar" }
+          {isUpdate ? "Atualizar" : "Adicionar"}
         </button>
       </DashboardProductFormWrapper>
     </Fragment>
