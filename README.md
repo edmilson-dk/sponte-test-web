@@ -29,21 +29,37 @@ vaga de desenvolvedor front-end na [Sponte]()
 <a id="layout"></a>
 ## Layout
 
-### Home page
+### Home page sem produtos
 
-![Home page]()
+![Home page sem produtos](https://tlgur.com/d/GZDemE64)
 
-### Página de cadastro/atualização de produto
+### Home page com produtos 
 
-![Página de cadastro/atualização de produto]()
+![Home page com produtos](https://tlgur.com/d/8QeYMo58)
 
-### Página de visualização de um produto
+### Listagem de produtos vazia
 
-![Página de visualização de um produto]()
+![Listagem de produtos vazia](https://tlgur.com/d/89wJkVwg)
 
-### Página de listagem dos produtos
+### Listagem de produtos preenchida
 
-![Página de listagem dos produtos]()
+![Listagem de produtos preenchida](https://tlgur.com/d/4RaqRYMg)
+
+### Formulário de criação vazio
+
+![Formulário de criação vazio](https://tlgur.com/d/GXMxQbPg)
+
+### Formulário de criação preenchido
+
+![Formulário de criação preenchido](https://tlgur.com/d/4x7aJzwg)
+
+### Atualização de produto 
+
+![Atualização de produtos](ttps://tlgur.com/d/g503ve2G)
+
+### Visualização de produto
+
+![Visualização de produto](https://tlgur.com/d/8ekR2bzg)
 
 <a id="execute"></a>
 ## Executando o projeto
