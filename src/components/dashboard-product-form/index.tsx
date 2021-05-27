@@ -45,7 +45,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
       {
         isOpenModal && (
           <DashboardProductModal
-            title="Novo produto adicionado."
+            title={isUpdate ? "Produto atualizado" : "Novo produto adicionado."} 
             message="Todos os dados já estão disponíveis para visualização."
             isSuccess={true}
             setIsOpen={setIsOpenModal}
