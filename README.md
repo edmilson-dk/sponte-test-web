@@ -14,6 +14,7 @@ vaga de desenvolvedor front-end na [Sponte]()
 # Tópicos 
 
 - [Tecologias](#techs)
+- [Check-list](#chech)
 - [Layout](#layout)
 - [Rodando local](#execute)
 - [Página online](#online)
@@ -24,7 +25,18 @@ vaga de desenvolvedor front-end na [Sponte]()
 
 - [ReactJS](https://pt-br.reactjs.org/)
 - [Styled Components](https://styled-components.com/)
-- [TypeScript]()
+- [Formik](https://formik.org/docs/overview)
+- [TypeScript](https://www.typescriptlang.org/)
+
+<a id="check"></a>
+### Check List
+
+- [x] Responsividade
+- [x] Validação de formulários
+- [x] Criação e armazenamento de produtos
+- [x] Atualização e armazenamento de produtos
+- [x] Deleção de produtos
+- [x] Listagem de produtos
 
 <a id="layout"></a>
 ## Layout
