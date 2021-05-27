@@ -42,7 +42,7 @@ export function DashboardHome() {
             }
             bgType="deleted"/>
           <DashboardBoxInfo 
-            title="Atualizados" 
+            title="Atualizações" 
             value={updatedCount.updatedCount ?? 0} 
             updatedAt={ 
               updatedCount.updatedCount !== undefined 

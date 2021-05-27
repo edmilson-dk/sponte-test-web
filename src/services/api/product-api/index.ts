@@ -75,6 +75,26 @@ export class ProductApi {
     return product ? product : null;
   }
 
+  updateProduct(data: ProductStoreType) {
+    const updatedAt = new Date().toISOString();
+    const products = this.getProducts();
+    const allProductsEvents: ProductEventsStoreType | null = this.getProductsEvents();
+
+    if (!products || !allProductsEvents) return;
+
+    const index = products.data.findIndex(item => item.id === data.id);
+    products.data[index] = { ...data, updatedAt };
+
+    this.updateProductEventCount({ 
+      updatedCount: allProductsEvents.updatedCount+1,
+      updatedDateUpdatedCount: updatedAt,
+    }, allProductsEvents);
+
+    window.localStorage.setItem(constants.storagedProductKey, JSON.stringify(products));
+
+    return;
+  }
+
   deleteProduct(id: string) {
     const allProducts = this.getProducts();
     const allProductsEvents = this.getProductsEvents();

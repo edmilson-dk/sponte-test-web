@@ -3,9 +3,8 @@ import { CategoriesType } from "./types";
 
 export function formatCategories(data: CategoriesType[]): string[] {
   const categories = [];
-  const newData = data.slice(1, data.length);
 
-  for(let item of newData) {
+  for(let item of data) {
     categories.push(item.value);
   }
 

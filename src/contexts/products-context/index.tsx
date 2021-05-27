@@ -37,16 +37,27 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
     return product;
   }
 
+  function updateProduct(data: ProductStoreType) {
+    productApi.updateProduct(data);
+    setOnUpdateState(!onUpdateState);
+  }
+
   useEffect(() => {
     const eventsData = productApi.getProductsEvents();
     if (!eventsData) return;
 
     setCreatedCount({ count: eventsData.count, updatedDateCount: eventsData.updatedDateCount });
+  }, [onAddState]);
+
+  useEffect(() => {
+    const eventsData = productApi.getProductsEvents();
+    if (!eventsData) return;
+
     setUpdatedCount({ 
       updatedCount: eventsData.updatedCount, 
       updatedDateUpdatedCount: eventsData.updatedDateUpdatedCount });
-  }, [onAddState]);
-
+  }, [onUpdateState]);
+ 
   useEffect(() => {
     const eventsData = productApi.getProductsEvents();
     if (!eventsData) return;
@@ -63,6 +74,7 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
       addProduct, 
       getAllProducts,
       getOneProduct,
+      updateProduct,
       createdCount, 
       deletedCount, 
       updatedCount,

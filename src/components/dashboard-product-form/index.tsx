@@ -17,7 +17,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
   const [ category, setCategory ] = useState(categories || [] as CategoriesType[]);
 
   const [ isOpenModal, setIsOpenModal ] = useState(false);
-  const { addProduct } = useProductsContext();
+  const { addProduct, updateProduct } = useProductsContext();
 
   const initialValues: ProductData = data || constants.initialProductValues;
 
@@ -27,8 +27,15 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
     validationSchema: ProductValidateSchema,
     onSubmit: values => {
       const categories = formatCategories(category);
+      isUpdate 
+        ? updateProduct({ ...values, 
+            createdAt: data?.createdAt ?? "", 
+            updatedAt: data?.updatedAt ?? "", 
+            category: categories,
+            id: data?.id ?? "" 
+          })
+        : addProduct({...values, category: categories });
       setIsOpenModal(true);
-      addProduct({...values, category: categories });
     },
   });
 

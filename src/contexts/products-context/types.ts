@@ -22,6 +22,7 @@ export interface ProductsContextProps {
   addProduct: (data: ProductData) => void;
   getAllProducts: () => ProductsStoreType | null;
   getOneProduct: (id: string) => ProductStoreType | null;
+  updateProduct: (data: ProductStoreType) => void;
   deletedCount: DeletedCountType;
   createdCount: CreatedCountType;
   updatedCount: UpdatedCountType;

@@ -1,22 +1,23 @@
 import { useLocation } from "react-router";
+
 import { DashboardProductForm } from "src/components/dashboard-product-form";
 import { useProductsContext } from "src/contexts/products-context";
 import { Container } from "src/styles/components/container";
 import { TitlePrimary } from "src/styles/components/titles";
-import { DashboardCreateWrapper } from "src/styles/screens/dashboard-create";
+import { DashboardUpdateWrapper } from "src/styles/screens/dashboard-update";
 import { formatArrayCategories } from "src/utils/formatCategories";
 
-type r = {
+type locationState = {
   id: string;
 }
 
 export function DashboardUpdate() {
-  const history = useLocation<r>();
+  const history = useLocation<locationState>();
   const { getOneProduct } = useProductsContext();
   const data = getOneProduct(history.state.id);
 
   return (
-    <DashboardCreateWrapper>
+    <DashboardUpdateWrapper>
       <Container>
         <TitlePrimary>Atualizar produto</TitlePrimary>
         <DashboardProductForm 
@@ -25,6 +26,6 @@ export function DashboardUpdate() {
           isUpdate={true}
         />
       </Container>
-    </DashboardCreateWrapper>
+    </DashboardUpdateWrapper>
   )
 }
