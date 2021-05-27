@@ -6,7 +6,7 @@ import { ProductData } from "../api/product-api/types";
 export const ProductValidateSchema = Yup.object().shape({
   title: Yup.string()
     .min(3, "Nome muito curto!")
-    .max(50, "Nome muito longo!")
+    .max(100, "Nome muito longo!")
     .required("Por favor preencha este campo."),
   description: Yup.string()
     .min(3, "Descrição muita curta!")
