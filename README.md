@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Product Flow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Product-Flow&message=Welcome&color=FFFFFF&labelColor=3292d6" alt="PRs welcome!" />
+  <img alt="License" src="https://img.shields.io/static/v1?label=version&message=1.0&color=FFFFFF&labelColor=3292d6">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=FFFFFF&labelColor=3292d6">
+  <img alt="Stars" src="https://img.shields.io/github/stars/edmilson-dk/sponte-test-web?color=FFFFFF&labelColor=3292d6">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/edmilson-dk/sponte-test-web?color=FFFFFF&labelColor=3292d6">
+</p>
 
-## Available Scripts
+O Product Flow é uma simples plataforma para CRUD de produtos, o projeto foi criado como teste técnico para uma 
+vaga de desenvolvedor front-end na [Sponte]()
 
-In the project directory, you can run:
+# Tópicos 
 
-### `yarn start`
+- [Tecologias](#techs)
+- [Layout](#layout)
+- [Rodando local](#execute)
+- [Página online](#online)
+- [Licença](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a id="techs"></a>
+## Tecnologias e bibliotecas utilizadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript]()
 
-### `yarn test`
+<a id="layout"></a>
+## Layout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Home page
 
-### `yarn build`
+![Home page]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Página de cadastro/atualização de produto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Página de cadastro/atualização de produto]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Página de visualização de um produto
 
-### `yarn eject`
+![Página de visualização de um produto]()
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Página de listagem dos produtos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Página de listagem dos produtos]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a id="execute"></a>
+## Executando o projeto
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para executar o projeto em sua máquina siga os passos abaixo.
 
-## Learn More
+- 1 Clone meu repositório em sua máquina 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+git clone git@github.com:edmilson-dk/sponte-test-web.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# entre na pasta
+
+cd sponte-test-web
+```
+
+- 2 Após o passo acima, instale as dependências necessárias, para isso é preciso que você tenha o [NodeJS](https://nodejs.org/en/) instalado em sua máquina.
+
+```sh
+npm install
+
+# ou com yarn
+
+yarn install
+```
+
+- 4 Feito isso é hora de executar o projeto, para isso execute o comando abaixo.
+
+```sh
+npm start 
+
+# ou com yarn
+
+yarn start
+```
+
+<a id="online"></a>
+## Veja a aplicação funcionando
+
+Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, e você pode testa ela no link abaixo.
+
+[Aplicação aqui]()
+
+<a id="license"></a>
+## 🤝 Licença
+
+[MIT](https://github.com/edmilson-dk/sponte-test-web/blob/main/LICENSE) Project License
+
+Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
