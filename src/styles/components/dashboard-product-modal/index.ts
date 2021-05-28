@@ -27,7 +27,7 @@ export const DashboardProductModalContent = styled.div<Props>`
   padding: 1rem;
   border-radius: ${({ theme }) => theme.utility.radius};
   position: relative;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.040);
 
   display: flex;

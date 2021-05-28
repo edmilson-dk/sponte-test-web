@@ -10,12 +10,12 @@ export const DashboardWrapperSideBarWrapper = styled.aside`
   align-items: center;
   padding: 20px;
 
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
 
   > div {
     width: 100%;
     padding-bottom: 10px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.whiteSecond};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.bgSecond};
 
     > img {
       width: 100px;

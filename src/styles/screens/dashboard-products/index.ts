@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DashboardProductsWrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: ${({ theme }) => theme.colors.whiteSecond};
+  background-color: ${({ theme }) => theme.colors.bgSecond};
 `;
 
 export const DashboardProductsContent = styled.section`

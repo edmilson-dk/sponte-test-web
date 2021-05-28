@@ -4,7 +4,7 @@ export const DashboardProductFormWrapper = styled.form`
   width: 100%;
   max-width: 740px;
   border-radius: ${({ theme }) => theme.utility.radius};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
   padding: 20px;
   margin: 40px auto;
   display: flex;

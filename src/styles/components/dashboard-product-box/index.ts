@@ -4,7 +4,7 @@ export const DashboardProductBoxWrapper = styled.div`
   width: 100%;
   padding: 20px;
   border-radius: ${({ theme }) => theme.utility.radius};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
   box-shadow: 3px 3px 3px rgba(0,0,0,0.060);
 
   display: flex;

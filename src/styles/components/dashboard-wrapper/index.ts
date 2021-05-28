@@ -15,7 +15,7 @@ export const DashboarWrapperNavigator = styled.aside`
   width: 100%;
   max-width: 280px;
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
 
   @media screen and (max-width: 1020px) {
     min-height: auto;
@@ -27,7 +27,7 @@ export const DashboarWrapperContent = styled.article`
   width: calc(100% - 280px);
   height: 100vh;
   overflow-y: auto;
-  background-color: ${({ theme }) => theme.colors.whiteSecond};
+  background-color: ${({ theme }) => theme.colors.bgSecond};
 
   @media screen and (max-width: 1020px) {
     width: 100%;

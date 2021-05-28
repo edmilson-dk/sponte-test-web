@@ -11,7 +11,7 @@ const arrowAnimate = keyframes`
 export const DashboardHomeWrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: ${({ theme }) => theme.colors.whiteSecond};
+  background-color: ${({ theme }) => theme.colors.bgSecond};
 
   span#arrow svg {
     width: 40px;
