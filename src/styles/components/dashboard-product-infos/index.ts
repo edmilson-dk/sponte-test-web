@@ -4,7 +4,7 @@ export const DashboardProductInfosWrapper = styled.article`
   width: 100%;
   max-width: 720px;
   border-radius: ${({ theme }) => theme.utility.radius};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
   box-shadow: 3px 3px 3px rgba(0,0,0,0.060);
   padding: 20px;
   margin: 40px auto;
