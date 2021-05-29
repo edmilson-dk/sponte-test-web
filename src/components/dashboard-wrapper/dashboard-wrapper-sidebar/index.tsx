@@ -4,7 +4,7 @@ import { NavigatorButton } from "./navigator-button";
 import { DashboardWrapperSideBarWrapper } from "src/styles/components/dashboard-wrapper/dashboard-wrapper-sidebar";
 
 import logoSvg from "src/assets/logo.svg";
-import { useCustomThemeContext } from "src/contexts/CustomThemeContext";
+import { useCustomThemeContext } from "src/contexts/custom-theme-context";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 
