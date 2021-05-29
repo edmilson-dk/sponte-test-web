@@ -32,6 +32,11 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
     return products;
   }
 
+  function getProductsByTitle(title: string): ProductsStoreType | null {
+    const products = productApi.getProductsByTitle(title);
+    return products;
+  }
+
   function getOneProduct(id: string): ProductStoreType | null {
     const product = productApi.getOneProduct(id);
     return product;
@@ -78,6 +83,7 @@ export function ProductsContextProvider({ children }: ProductsContextProviderPro
       createdCount, 
       deletedCount, 
       updatedCount,
+      getProductsByTitle
     }}>
       { children }
     </ProductsContext.Provider>
