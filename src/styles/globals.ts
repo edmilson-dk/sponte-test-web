@@ -7,6 +7,7 @@ export const GlobalsStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background .3s ease-in-out;
   }
 
   html {
