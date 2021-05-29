@@ -31,6 +31,7 @@ vaga de desenvolvedor front-end na [Sponte]()
 <a id="check"></a>
 ### Check List
 
+- [x] Dark/Light mode
 - [x] Responsividade
 - [x] Validação de formulários
 - [x] Criação e armazenamento de produtos
@@ -44,6 +45,8 @@ vaga de desenvolvedor front-end na [Sponte]()
 ### Home page sem produtos
 
 ![Home page sem produtos](https://tlgur.com/d/GZDemE64)
+
+![Home page dark](https://tlgur.com/d/GL0Qr7kG)
 
 ### Home page com produtos 
 
