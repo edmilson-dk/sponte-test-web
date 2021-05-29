@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { FiSearch } from "react-icons/fi";
 
 import { DashboardProductIsEmpty } from "src/components/dashboard-product-is-empty";
 import { DashboardProductPaginate } from "src/components/dashboard-product-paginate";
@@ -10,7 +11,8 @@ import { DashboardProductsWrapper, DashboardProductsContent } from "src/styles/s
 import { returnBoxs } from "../generic";
 
 export function DashboardProducts() {
-  const { deletedCount, createdCount, getAllProducts } = useProductsContext();
+  const { deletedCount, createdCount, getAllProducts, getProductsByTitle } = useProductsContext();
+  const searchProductInputRef = useRef<HTMLInputElement>(null);
   const data = getAllProducts();
   const count: number = data ? data.data.length : 0;
 
@@ -20,6 +22,13 @@ export function DashboardProducts() {
   useEffect(() => {
     setProducts(getAllProducts());
   }, [deletedCount, createdCount]);
+
+  function handleSearchProduct() {
+    if (searchProductInputRef.current && searchProductInputRef.current.value.length > 2) {
+      const products = getProductsByTitle(searchProductInputRef.current.value);
+      setProducts(products);
+    }
+  }
 
   function handlerNextDataClick() {
     const data = getAllProducts();
@@ -51,14 +60,24 @@ export function DashboardProducts() {
     <DashboardProductsWrapper>
       <Container>
         <DashboardProductsContent>
-          <TitlePrimary>
-            {
-              (products && products.data.length > 0)
-                ? "Todos os produtos"
-                : "Nenhum produto cadastrado"
-            }
-          </TitlePrimary>
+          <header id="header-search">
+            <TitlePrimary>
+              {
+                (products && products.data.length > 0)
+                  ? "Todos os produtos"
+                  : "Nenhum produto encontrado"
+              }
+            </TitlePrimary>
 
+            <div>
+              <input name="search" type="text" ref={searchProductInputRef}/>
+              <button type="button" onClick={handleSearchProduct}>
+                <span>
+                  <FiSearch />
+                </span>
+              </button>
+            </div>
+          </header>
           {(products && products.data.length > 0)
             ? (
               <section>
