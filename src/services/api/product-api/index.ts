@@ -75,6 +75,20 @@ export class ProductApi {
     return product ? product : null;
   }
 
+  getProductsByTitle(title: string): ProductsStoreType | null {
+    const allProducts = window.localStorage.getItem(constants.storagedProductKey);
+    if (!allProducts) return null;
+
+    const products: ProductsStoreType = JSON.parse(allProducts);
+    const product: ProductsStoreType = { data: [] };
+
+    products.data.forEach(item => {
+      if (item.title === title) product.data.push(item);
+    });
+      
+    return product ? product : null;
+  }
+
   updateProduct(data: ProductStoreType) {
     const updatedAt = new Date().toISOString();
     const products = this.getProducts();
