@@ -12,6 +12,7 @@ import { useProductsContext } from "src/contexts/products-context";
 import { DashboardProductModal } from "../dashboard-product-modal";
 import { DashboardProductFormProps } from "./types";
 import { CategoriesType } from "src/utils/types";
+import { scrollToTop } from "src/utils/scrollToTop";
 
 export function DashboardProductForm({ data, categories, isUpdate }: DashboardProductFormProps) {
   const [category, setCategory] = useState(categories || [] as CategoriesType[]);
@@ -37,6 +38,7 @@ export function DashboardProductForm({ data, categories, isUpdate }: DashboardPr
         })
         : addProduct({ ...values, category: categories });
       setIsOpenModal(true);
+      scrollToTop(true);
     },
   });
 
